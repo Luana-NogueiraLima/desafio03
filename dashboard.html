@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — Threat Intelligence Portal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-mark">◆</span>
+        <div>
+          <p class="brand-name">Threat<span>Intel</span></p>
+          <p class="brand-sub">Threat Intelligence Portal</p>
+        </div>
+      </div>
+
+      <nav class="side-nav">
+        <ul>
+          <li><a href="dashboard.html" class="active"><span class="nav-icon">◆</span> Dashboard</a></li>
+          <li><a href="index.html#ferramentas"><span class="nav-icon">{ }</span> Sandbox</a></li>
+          <li><a href="index.html#ferramentas"><span class="nav-icon">◷</span> Timeline</a></li>
+          <li><a href="index.html#iocs"><span class="nav-icon">▤</span> Base de IoCs</a></li>
+          <li><a href="#perfil"><span class="nav-icon">☺</span> Meu perfil</a></li>
+        </ul>
+      </nav>
+
+      <div class="side-footer">
+        <span class="dot"></span> Sistema operacional
+      </div>
+    </aside>
+
+    
+    <div class="content">
+
+      <header class="topbar">
+        <div>
+          <p class="eyebrow-line">Squad 2 · Visão geral</p>
+          <h1>Dashboard de incidentes</h1>
+        </div>
+        <div class="user-chip">
+          <span class="user-chip-avatar">MA</span>
+          <div>
+            <p class="user-chip-name">Mariana Alves</p>
+            <p class="user-chip-role">Analista Júnior</p>
+          </div>
+        </div>
+      </header>
+
+      <main>
+
+        
+        <section class="stats" aria-label="Estatísticas">
+          <article class="stat-card stat-alert">
+            <p class="stat-label">Incidentes ativos</p>
+            <p class="stat-value">3</p>
+            <p class="stat-note">2 com prioridade crítica</p>
+          </article>
+
+          <article class="stat-card">
+            <p class="stat-label">Artefatos analisados hoje</p>
+            <p class="stat-value">47</p>
+            <p class="stat-note">+12 desde ontem</p>
+          </article>
+
+          <article class="stat-card">
+            <p class="stat-label">IoCs catalogados</p>
+            <p class="stat-value">1.284</p>
+            <p class="stat-note">5 novos esta semana</p>
+          </article>
+
+          <article class="stat-card">
+            <p class="stat-label">Tempo médio de triagem</p>
+            <p class="stat-value">18 min</p>
+            <p class="stat-note">meta: 15 min</p>
+          </article>
+        </section>
+
+        <div class="lower-grid">
+
+         
+          <section class="panel">
+            <div class="panel-head">
+              <h2>Incidentes recentes</h2>
+              <p>Últimas ocorrências abertas pelo time.</p>
+            </div>
+
+            <ul class="incident-list">
+              <li>
+                <span class="incident-id">INC-2041</span>
+                <p class="incident-desc">Script JavaScript obfuscado em página de login falsa</p>
+                <span class="badge badge-critical">Crítico</span>
+              </li>
+              <li>
+                <span class="incident-id">INC-2040</span>
+                <p class="incident-desc">Conexão suspeita do IP 185.22.14.9 com servidor interno</p>
+                <span class="badge badge-critical">Crítico</span>
+              </li>
+              <li>
+                <span class="incident-id">INC-2039</span>
+                <p class="incident-desc">Anexo com hash desconhecido reportado por RH</p>
+                <span class="badge badge-high">Alto</span>
+              </li>
+              <li>
+                <span class="incident-id">INC-2038</span>
+                <p class="incident-desc">Domínio parecido com o da empresa registrado recentemente</p>
+                <span class="badge badge-medium">Médio</span>
+              </li>
+            </ul>
+          </section>
+
+          
+          <section class="panel profile" id="perfil">
+            <div class="panel-head">
+              <h2>Perfil do usuário</h2>
+            </div>
+
+            <div class="profile-top">
+              <div class="profile-avatar">MA</div>
+              <div>
+                <h3>Mariana Alves</h3>
+                <p class="profile-role">Analista de Segurança da Informação Júnior</p>
+              </div>
+            </div>
+
+            <dl class="profile-details">
+              <div>
+                <dt>Idade</dt>
+                <dd>27 anos</dd>
+              </div>
+              <div>
+                <dt>Localização</dt>
+                <dd>Recife-PE</dd>
+              </div>
+              <div>
+                <dt>Empresa</dt>
+                <dd>Médio porte</dd>
+              </div>
+              <div>
+                <dt>Nível de acesso</dt>
+                <dd>Analista Júnior</dd>
+              </div>
+            </dl>
+
+            <p class="profile-goal">
+              <strong>Foco:</strong> identificar rapidamente a origem e o nível das
+              ameaças, reunindo tudo em uma única plataforma.
+            </p>
+          </section>
+
+        </div>
+
+      </main>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

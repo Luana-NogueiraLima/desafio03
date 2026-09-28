@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Threat Intelligence Portal — Central de Resposta a Incidentes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark">◆</span>
+      <div>
+        <p class="brand-name">Threat<span>Intel</span></p>
+        <p class="brand-sub">Central de Resposta a Incidentes</p>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="#ferramentas" class="active">Ferramentas</a></li>
+        <li><a href="#iocs">Base de IoCs</a></li>
+        <li><a href="#reportar">Reportar</a></li>
+        <li><a href="#persona">Squad</a></li>
+      </ul>
+    </nav>
+    <div class="status-pill">
+      <span class="dot"></span> 3 incidentes ativos
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <p class="eyebrow-line">Squad 2 · Threat Intelligence Portal</p>
+      <h1>Investigue artefatos suspeitos antes que eles virem incidentes.</h1>
+      <p class="hero-desc">
+        Hashes de arquivo, URLs maliciosas e trechos de código obfuscado, tudo triado
+        no mesmo lugar. O Threat Intelligence Portal reúne desobfuscação, linha do tempo forense e uma
+        base de indicadores pesquisável para acelerar a resposta do seu time.
+      </p>
+    </section>
+
+    <section class="tools" id="ferramentas">
+      <h2>O que o portal faz</h2>
+      <div class="card-grid">
+
+        <article class="tool-card">
+          <span class="tool-icon">{ }</span>
+          <h3>Sandbox de Desobfuscação</h3>
+          <p>Cole um trecho de JavaScript obfuscado — comum em kits de phishing — e
+             acompanhe a versão legível lado a lado, sem sair do navegador.</p>
+          <span class="tool-tag">Análise de código</span>
+        </article>
+
+        <article class="tool-card">
+          <span class="tool-icon">◷</span>
+          <h3>Linha do Tempo Forense</h3>
+          <p>Reconstrua a ordem cronológica de um ataque passo a passo, a partir dos
+             logs coletados durante a investigação do incidente.</p>
+          <span class="tool-tag">Reconstrução de ataque</span>
+        </article>
+
+        <article class="tool-card">
+          <span class="tool-icon">▤</span>
+          <h3>Base de IoCs</h3>
+          <p>Busque hashes, IPs e domínios já catalogados, com filtros combinados e
+             relatórios de investigação salvos localmente.</p>
+          <span class="tool-tag">Indicadores de comprometimento</span>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="iocs" id="iocs">
+      <div class="section-head">
+        <h2>Base de conhecimento de IoCs</h2>
+        <p>Últimos indicadores catalogados pelo time de plantão.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Indicador</th>
+              <th>Tipo</th>
+              <th>Nível de ameaça</th>
+              <th>Detectado em</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>a3f9…7c21</code></td>
+              <td>Hash SHA-256</td>
+              <td><span class="badge badge-critical">Crítico</span></td>
+              <td>10/09/2026</td>
+              <td>Confirmado</td>
+            </tr>
+            <tr>
+              <td><code>hxxp://login-secure-id[.]net</code></td>
+              <td>URL de phishing</td>
+              <td><span class="badge badge-high">Alto</span></td>
+              <td>10/09/2026</td>
+              <td>Em análise</td>
+            </tr>
+            <tr>
+              <td><code>185.22.14.9</code></td>
+              <td>IP de C2</td>
+              <td><span class="badge badge-critical">Crítico</span></td>
+              <td>11/09/2026</td>
+              <td>Confirmado</td>
+            </tr>
+            <tr>
+              <td><code>b7e1…44aa</code></td>
+              <td>Hash MD5</td>
+              <td><span class="badge badge-medium">Médio</span></td>
+              <td>12/09/2026</td>
+              <td>Em análise</td>
+            </tr>
+            <tr>
+              <td><code>update-flashplayer[.]xyz</code></td>
+              <td>Domínio malicioso</td>
+              <td><span class="badge badge-medium">Médio</span></td>
+              <td>13/09/2026</td>
+              <td>Monitorando</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="report" id="reportar">
+      <div class="section-head">
+        <h2>Reportar novo indicador</h2>
+        <p>Encontrou um artefato suspeito? Envie para triagem da equipe.</p>
+      </div>
+
+      <form class="report-form">
+        <div class="field">
+          <label for="nome">Nome do analista</label>
+          <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required>
+        </div>
+
+        <div class="field">
+          <label for="email">E-mail corporativo</label>
+          <input type="email" id="email" name="email" placeholder="voce@empresa.com" required>
+        </div>
+
+        <div class="field field-full">
+          <label for="mensagem">Descrição do indicador</label>
+          <textarea id="mensagem" name="mensagem" rows="5"
+            placeholder="Hash, URL ou comportamento observado, contexto do achado..." required></textarea>
+        </div>
+
+        <button type="submit">Enviar relatório</button>
+      </form>
+    </section>
+
+    <section class="persona" id="persona">
+      <div class="section-head">
+        <h2>Persona do projeto</h2>
+        <p>Público-alvo: profissionais e estudantes da área de Tecnologia.</p>
+      </div>
+
+      <div class="persona-card">
+        <div class="persona-top">
+          <div class="persona-avatar">MA</div>
+          <div>
+            <h3>Mariana Alves, 27</h3>
+            <p class="persona-role">Analista de Segurança da Informação Júnior</p>
+          </div>
+        </div>
+
+        <p class="persona-context">
+          Mora em Recife-PE e trabalha em uma empresa de médio porte, monitorando sistemas
+          e investigando arquivos, IPs e comportamentos suspeitos no dia a dia.
+        </p>
+
+        <dl class="persona-details">
+          <div>
+            <dt>Objetivo</dt>
+            <dd>Navegar com facilidade, identificar rapidamente a origem e o nível das ameaças, e reunir tudo em um único lugar.</dd>
+          </div>
+          <div>
+            <dt>Dificuldade</dt>
+            <dd>Informações espalhadas em várias ferramentas e dificuldade para relacionar eventos e interpretar resultados técnicos.</dd>
+          </div>
+          <div>
+            <dt>Como resolve hoje</dt>
+            <dd>Usa ferramentas de análise de arquivos e IPs, planilhas e registros internos, relacionando tudo manualmente.</dd>
+          </div>
+          <div>
+            <dt>O que a faria escolher o portal</dt>
+            <dd>Uma plataforma central e visual, com apoio humanoide, unindo sandbox, timeline e base de IoCs num só ambiente.</dd>
+          </div>
+        </dl>
+
+        <p class="hypothesis">
+          <strong>Hipótese:</strong> acreditamos que profissionais de tecnologia têm dificuldade
+          para centralizar e relacionar informações durante a investigação de incidentes, e que
+          uma plataforma visual reunindo sandbox, timeline e base de IoCs ajuda a compreender
+          as ameaças mais rápido e tomar decisões de resposta com mais eficiência.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Threat Intelligence Portal — Central de Resposta a Incidentes · Projeto 2, Squad 2</p>
+    <p>Desafio 2 · CSS Grid + Formulários + Persona</p>
+  </footer>
+
+</body>
+</html>
